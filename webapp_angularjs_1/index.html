@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="appNodeHotel">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Node Hoteles AngularJS</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Node Hoteles AngularJS</h1>
+    </header>
+
+    <div id="container">
+        <aside>
+            <form action="" >
+                <p><label for="nombre">Nombre</label>
+                    <br/>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre"></p>
+                <p><label for="apellidos">Apellidos</label>
+                    <br/><input type="text" id="apellidos" name="apellidos" placeholder="apellidos"></p>
+                <p><label for="email">E-mail</label>
+                    <br/><input type="email" id="email" name="email" placeholder="email"></p>
+                <p><label for="fecha_inicio">Fecha Inicio Reserva</label>
+                    <br/><input type="date" id="fecha_inicio" name="fecha_inicio" placeholder="Fecha Inicio Reserva"></p>
+                <p><label for="fecha_fin">Fecha Fin Reserva</label>
+                    <br/><input type="date" id="fecha_fin" name="fecha_fin" placeholder="Fecha Fin Reserva"></p>
+                <p><input type="checkbox" id="doble" name="doble" data-ng-model="doble"><label for="doble">Doble</label>
+                </p>
+                <p><input type="button" id="reservar" name="reservar" value="Reservar"></p>
+            </form>
+            
+        </aside>
+
+        <section id="main">
+            <div id="calendario">
+            <div data-ng-controller="ControladorDisponibilidadDia as DisDia">
+                <input type="date" data-ng-model="DisDia.fecha" data-ng-change="DisDia.actualizarDisponibilidad()">
+                <br/>
+                {{ DisDia.fecha | date: 'dd-MM-yyyy' }}
+                <br/>
+                simple: {{ DisDia.simpleDia() }}
+                <br/>
+                doble: {{ DisDia.dobleDia() }}
+                <hr>
+                <p>
+                    <ul>
+                        <li data-ng-repeat="reserva in DisDia.listaReservas">
+                        Nº Habitación: {{ reserva.numero }}, {{ reserva.doble ? "Doble" : "Simple"}} , Fecha incio: {{ reserva.fecha_inicio | date: 'dd-MM-yyyy' }}, Fecha fin: {{ reserva.fecha_fin | date: 'dd-MM-yyyy'}}
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            </div>
+        </section>
+    
+    <footer>
+        <p>Node Hoteles Prototipo - Derechos Reservados &copy; 2017</p>
+    </footer>
+
+    <div id="habitaciones" data-ng-controller="HabitacionesController as HsC">
+    <hr>
+        <h2>Habitaciones</h2>
+        <h3>Cantidad: {{ HsC.cantidad() }}</h3>
+        <!-- Campo de texto para introducir datos de la habitación -->
+        <!-- Añadimos controlador en el div -->
+        <div data-ng-controller="HabitacionController as HC">
+            <!-- Campo de texto para introducir datos de la habitación -->
+            Numero: <input type="number" data-ng-model="HC.numero" value="1" /></br>
+            ¿Doble?: <input type="checkbox" data-ng-model="HC.doble" value="false" />
+            <input type="button" value="+" ng-click="HC.addHabitacion()" />
+        </div>
+
+        <ul>
+            <li data-ng-repeat="habitacion in HsC.lista">
+                Nº {{ habitacion.numero}}: {{ habitacion.doble ? "Doble" : "Simple"}}
+                <input type="button" value="X" ng-click="HsC.delHabitacion(habitacion.numero)" />
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="js/modelo.js"></script>
+    <script src="js/controllers.js"></script>
+</body>
+
+
+</html>

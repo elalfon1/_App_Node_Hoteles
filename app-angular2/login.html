@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Node Hoteles Angular2</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="dist/css/styles.css">
+
+    
+</head>
+<body>
+	<div class="container-fluid">
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top sombra-header">
+				<div class="container-fluid">
+					<div class="navbar-header">
+					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-navegacion" aria-expanded="false">
+					    <span class="sr-only">Menu Navegación</span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					  </button>
+					  <a class="navbar-brand" href="#"><img src="img/node-logo.png" alt="Node Hoteles"></a>
+					</div>
+					<div class="collapse navbar-collapse navbar-right" id="menu-navegacion">
+					  <ul class="nav navbar-nav">
+					  	<li><a href="index.html">Inicio</a></li>
+					  	<li><a href="index.html">Reserva</a></li>
+					  	<li class="active"><a href="#">Administración</a></li>
+					  </ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div>
+	<div class="container">
+		<div class="row margen-sup-lg">
+			<div class="col-md-4"></div>
+			<section id="main" class="col-md-4">
+				<div class="panel panel-default sombra">
+					<div class="panel-heading">
+						<h3 class="panel-title">Login</h3>
+					</div>
+					<div class="panel-body">
+						<form role="form" id="form-reserva" name="form-reserva">
+			                <div class="form-group">
+				                <label for="usuario">Usuario</label>
+				                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Introduzca Usuario" />
+			            	</div>
+			            	<div class="form-group">
+				                <label for="password">Password</label>
+				                <input type="text" class="form-control" id="password" name="password" placeholder="Introduzca Password" />
+			            	</div>
+			            </form>
+					</div>
+					<div class="panel-footer flex-btwn">
+						<a href="#" type="button" class="btn btn-primary" id="limpiar"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Limpiar</a>
+						<a href="admin.html" type="button" class="btn btn-success" id="login"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Login</a>
+					</div>
+				</div>            
+        	</<section>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+	<footer>
+		<div class="container-fluid">
+			<nav class="navbar navbar-default navbar-inverse navbar-fixed-bottom">
+				<div class="container-fluid">
+					<div class="list-inline navbar-left">
+					  <ul class="nav navbar-nav">
+					  	<li><a href="#">Node Hoteles &copy; 2017. Todos los derechos reservados.</a></li>
+					  </ul>
+					</div>
+					<div class="list-inline navbar-right">
+					  <ul class="nav navbar-nav">
+					  	<li><a href="#">Facebook</a></li>
+					  	<li><a href="#">Twitter</a></li>
+					  </ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</footer>
+</body>
+<script type="text/javascript" src="dist/js/jquery.min.js"></script>
+<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="dist/js/moment-with-locales.js"></script>
+<script type="text/javascript" src="dist/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="dist/js/node-hoteles.js"></script>
+
+</html>

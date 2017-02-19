@@ -1,0 +1,23 @@
+-Dierctorio raiz
+    - Aplicación web
+    - ApiRest
+        - Aplicación (app.js)
+            - Servidor web (bin/www)
+	    - Modelo
+			- Schema.js
+			- LogicaNegocio
+                - Habitaciones
+                - Clientes
+				- Reservas
+		- Rutas
+            - Index     /
+            - Admin     /admin
+            - Apirest   /api
+                - /api/bookings/
+                - /api/admin/rooms
+                - /api/admin/customers
+	- web publica
+		- Angular2
+		- Recursos estáticos
+			- Estilos
+			- Imagenes

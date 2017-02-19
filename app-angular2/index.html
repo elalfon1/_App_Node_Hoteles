@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Node Hoteles Angular2</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="dist/css/styles.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top sombra-header">
+				<div class="container-fluid">
+					<div class="navbar-header">
+					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-navegacion" aria-expanded="false">
+					    <span class="sr-only">Menu Navegación</span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					  </button>
+					  <a class="navbar-brand" href="#"><img src="img/node-logo.png" alt="Node Hoteles"></a>
+					</div>
+					<div class="collapse navbar-collapse navbar-right" id="menu-navegacion">
+					  <ul class="nav navbar-nav">
+					  	<li class="active"><a href="#">Inicio</a></li>
+					  	<li><a href="#">Reserva</a></li>
+					  	<li><a href="login.html">Administración</a></li>
+					  </ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div>
+	<div class="container">
+		<div class="row">
+			<aside class="col-md-3">
+				<div class="panel panel-default sombra">
+					<div class="panel-heading">
+						<h3 class="panel-title">Reserva de Habitación</h3>
+					</div>
+					<div class="panel-body">
+						<form role="form" id="form-reserva" name="form-reserva">
+			                <div class="form-group">
+				                <label for="nombre">Nombre</label>
+				                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduzca Nombre" />
+			            	</div>
+			            	<div class="form-group">
+				                <label for="apellidos">Apellidos</label>
+				                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Introduzca Apellidos" />
+			            	</div>
+			            	<div class="form-group">
+				                <label for="email">E-mail</label>
+				                <input type="text" class="form-control" id="email" name="email" placeholder="Introduzca E-mail" />
+			            	</div>
+							<div class="form-group">
+								<label>Fecha Inicio</label>
+								<div class='input-group date' id='fecha_inicio'>
+									<input type='text' class="form-control" />
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+							</div>
+			            	<div class="form-group">
+								<label>Fecha Fin</label>
+								<div class='input-group date' id='fecha_fin'>
+									<input type='text' class="form-control" />
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+							</div>
+			            	<div class="radio">
+								<label><input type="radio" id="doble" name="doble" checked>Habitación Doble</label>
+							</div>
+							<div class="radio">
+								<label><input type="radio" id="simple" name="simple">Habitación Simple</label>
+							</div>
+			            </form>
+					</div>
+					<div class="panel-footer flex-btwn">
+						<button type="button" class="btn btn-primary" id="cancelar"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancelar</button>
+						<button type="button" class="btn btn-success" id="reservar"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Reservar</button>
+					</div>
+				</div>            
+        	</aside>
+	        <section id="main" class="col-md-9">
+	        	<div>
+		        	<p><img src="img/node-logo-lg.png" alt="Node Hoteles" class="img-responsive"></p>
+		            <p><img src="img/fachada-hotel.jpg" alt="Hotel Node Madrid" class="img-responsive img-thumbnail sombra"></p> 
+		            <p class="margen-sup margen-inf text-justify">
+		            	El hotel Node Madrid se encuentra en un palacete diseñado por el arquitecto Antonio Palacios, quien también dejó su sello en el Palacio de Cibeles. El hotel tiene una excelente ubicación frente a El Museo del Prado y el Museo Thyssen-Bornemisza cruzando la calle. El Museo Nacional Centro de Arte Reina Sofía está también a tan solo 10 minutos andando desde el hotel.
+		            </p> 
+		            <p class="text-justify">
+		            	El hotel cuenta con un elegante lobby con lujosos sofás y sillas, el entorno perfecto para nuestro bar tea&wine. Para degustar gastronomía del máxima calidad, "Estado Puro" sirve mini-delicias con la firma de Paco Roncero, chef con 2 estrellas Michelin, en el peculiar bar o en la terraza exterior, una de las más espectaculares de la ciudad con vistas directas a la fuente de Neptuno. 
+		            </p>
+	            </div>
+	            <div class="row">
+	            	<div class="col-md-6 margen-sup">
+	            		<img src="img/hall-hotel.jpg" alt="Hotel Node Madrid" class="img-responsive sombra">
+	            	</div>
+
+	            	<div class="col-md-6 margen-sup">
+	            		<img src="img/bar-hotel.jpg" alt="Hotel Node Madrid" class="img-responsive sombra">
+	            	</div>
+	            </div>
+	            <div class="line-bottom  margen-sup-lg">
+		            <div>
+		            	<h3>Habitaciones</h3>
+		            </div>
+	            </div>
+	            <div class="row  margen-sup">
+		            <div class="col-md-4 line-right flex-center">
+		            	<img src="img/habitacion-doble-hotel.jpg" alt="Hotel Node Madrid" class="img-responsive sombra">
+		            </div>
+		            <div class="col-md-8 margen-sup-sm">
+		            	<p class="text-justify">
+		            		Nuestras 56 habitaciones son de distintos estilos y tamaños y, entre ellas, se incluyen Habitaciones Estándar contemporáneas. Estas últimas ofrecen comodidades como máquinas Nespresso y batas de baño (albornoces).
+		            	</p>
+		            	<p class="text-justify">
+							Disponemos de habitaciones simples y dobles para adaptarnos a sus necesidades.
+						</p>
+						<p class="text-justify">
+							Algunas habitaciones ofrecen magníficas vistas al Jardín Botánico y todas cuentan con Wifi gratis.
+		            	</p>
+		            </div>
+	            </div>
+	        </section>
+		</div>
+	</div>
+	<footer>
+		<div class="container-fluid margen-sup-lg">
+			<nav class="navbar navbar-default navbar-inverse">
+				<div class="container-fluid">
+					<div class="list-inline navbar-left">
+					  <ul class="nav navbar-nav">
+					  	<li><a href="#">Node Hoteles &copy; 2017. Todos los derechos reservados.</a></li>
+					  </ul>
+					</div>
+					<div class="list-inline navbar-right">
+					  <ul class="nav navbar-nav">
+					  	<li><a href="#">Facebook</a></li>
+					  	<li><a href="#">Twitter</a></li>
+					  </ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</footer>
+</body>
+<script type="text/javascript" src="dist/js/jquery.min.js"></script>
+<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="dist/js/moment-with-locales.js"></script>
+<script type="text/javascript" src="dist/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="dist/js/node-hoteles.js"></script>
+
+</html>

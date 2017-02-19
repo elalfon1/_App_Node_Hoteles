@@ -1,0 +1,54 @@
+body {
+	padding-top: 70px;
+	background-color: #fff;
+}
+
+.flex-btwn{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sombra-header {
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sombra {
+	box-shadow: 0px 1px 14px rgba(0, 0, 0, 0.2);
+}
+
+.margen-sup-sm {
+	margin-top: 10px;
+}
+
+.margen-sup {
+	margin-top: 20px;
+}
+
+.margen-sup-lg {
+	margin-top: 40px;
+}
+
+.line-bottom {
+	border-bottom: 1px solid #000;
+}
+
+.line-right {
+	border-right: 1px solid #CCC;
+}
+
+@media screen and (max-width: 992px){
+
+	.line-right {
+	border-right: 0px;
+	}
+
+}
+
+
