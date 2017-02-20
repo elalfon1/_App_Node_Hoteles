@@ -1,14 +1,16 @@
+/** Pruebas CRUD Customers
+
 var modelCustomers = require("../modelo/customers-modelo");
 var assert = require("assert");
 
 describe("Pruebas CRUD Customers", function() {
 
 
-    // before((done) => {
-    //     modelCustomers.grabarCustomer("Sergio Casado", "scasado@gmx.es");
-    //     modelCustomers.grabarCustomer("Jose Lopez", "jlopezq@gmail.com");
-    //     done();
-    // });
+    before((done) => {
+        modelCustomers.grabarCustomer("Sergio Casado", "scasado@gmx.es");
+        modelCustomers.grabarCustomer("Jose Lopez", "jlopezq@gmail.com");
+        done();
+    });
 
     var idSergioCasado = null;
     var idJoseLopez = null;
@@ -40,33 +42,33 @@ describe("Pruebas CRUD Customers", function() {
         });
     });
 
-    // describe("Pruebas Read", function() {
+    describe("Pruebas Read", function() {
 
-    //     it("Leer Sergio Casado", function(done) {
-    //         modelCustomers.leerCustomersPorNombre("Sergio C", function(error, cliente) {
-    //             if (error) {
-    //                 done(error);
+        it("Leer Sergio Casado", function(done) {
+            modelCustomers.leerCustomersPorNombre("Sergio C", function(error, cliente) {
+                if (error) {
+                    done(error);
 
-    //             } else {
-    //                 assert.ok(cliente.name == "Sergio Casado" && cliente.email == "scasado@gmx.es");
-    //                 done();
-    //             }
+                } else {
+                    assert.ok(cliente.name == "Sergio Casado" && cliente.email == "scasado@gmx.es");
+                    done();
+                }
 
-    //         });
-    //     });
-    //     it("Leer Jose Lopez", function(done) {
-    //         modelCustomers.leerCustomersPorNombre("Jose Lopez", function(error, cliente) {
-    //             if (error) {
-    //                 done(error);
+            });
+        });
+        it("Leer Jose Lopez", function(done) {
+            modelCustomers.leerCustomersPorNombre("Jose Lopez", function(error, cliente) {
+                if (error) {
+                    done(error);
 
-    //             } else {
-    //                 assert.ok(cliente.name == "Jose Lopez" && cliente.email == "jlopezq@gmail.com");
-    //                 done();
-    //             }
+                } else {
+                    assert.ok(cliente.name == "Jose Lopez" && cliente.email == "jlopezq@gmail.com");
+                    done();
+                }
 
-    //         });
-    //     });
-    // });
+            });
+        });
+    });
 
     describe("Pruebas Delete", function() {
 
@@ -98,10 +100,12 @@ describe("Pruebas CRUD Customers", function() {
 
     });
 
-    // after((done) => {
-    //     modelCustomers.borrarCustomer(idSergioCasado);
-    //     modelCustomers.borrarCustomer(idJoseLopez);
-    //     done();
-    // });
+    after((done) => {
+        modelCustomers.borrarCustomer(idSergioCasado);
+        modelCustomers.borrarCustomer(idJoseLopez);
+        done();
+    });
 
 });
+
+*/

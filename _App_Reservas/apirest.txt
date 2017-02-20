@@ -1,0 +1,13 @@
+GET - Habitaciones
+/api/habitaciones/dobles (todas las habitaciones dobles en el hotel)
+/api/habitaciones/simples (todas las habitaciones simples en el hotel)
+/api/habitaciones/:id?(si no se indica se muestran todas la habitaciones)
+
+GET - Clientes
+/api/clientes/nombre/:nombreCliente? (si no se indica se muestran todos los clientes)
+/api/clientes/email/:email? (si no se indica se muestran todos clientes)
+/api/clientes/:id? (si no se indica se muestran todos los clientes)
+
+GET - Reservas
+/api/reservas/fecha/:anio?/:mes?/:dia? (si no se indican fechas se muestran todas las reservas)
+/api/reservas/:id? (si no se indica se muestran todas las reservas)

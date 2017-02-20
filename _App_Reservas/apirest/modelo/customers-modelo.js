@@ -45,14 +45,14 @@ function leerCustomerPorId(_id, callback) {
 };
 
 function leerCustomersPorEmail(email, callback) {
-    Customer.find({ "email": { $regex: "^" + email } }, { "__v": 0 }, (error, cliente) => {
+    Customer.find({ "email": { $regex: "^" + email, $options: 'i' } }, { "__v": 0 }, (error, cliente) => {
         if (typeof callback != "undefined")
             callback(error, cliente);
     });
 };
 
 function leerCustomersPorNombre(nombre, callback) {
-    Customer.find({ "name": { $regex: "^" + nombre } }, { "__v": 0 }, (error, cliente) => {
+    Customer.find({ "name": { $regex: "^" + nombre, $options: 'i' } }, { "__v": 0 }, (error, cliente) => {
         if (typeof callback != "undefined")
             callback(error, cliente);
     });

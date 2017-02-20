@@ -10,6 +10,7 @@ var index = require('./routes/index');
 // var reservas = require('./routes/api/reservas');
 var habitaciones = require('./routes/api/rooms');
 var clientes = require('./routes/api/customers');
+var reservas = require('./routes/api/bookings');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/', index);
 // app.use('/misreservas', reservas);
 app.use('/api/habitaciones', habitaciones);
 app.use('/api/clientes', clientes);
+app.use('/api/reservas', reservas);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
