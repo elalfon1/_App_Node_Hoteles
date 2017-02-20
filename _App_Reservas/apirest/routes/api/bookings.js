@@ -2,15 +2,20 @@ var express = require("express");
 var modelBookings = require("../../modelo/bookings-modelo"); //En Node no hace falta el .js
 var router = express.Router();
 
-router.get("/aggregate/:anio/:mes/:dia", function(req, res, next) {
+router.get("/aggregate/:anio/:mes/:dia/:anioFin/:mesFin/:diaFin", function(req, res, next) {
     let anio = parseInt(req.params.anio);
     let mes = parseInt(req.params.mes) - 1;
     let dia = parseInt(req.params.dia);
 
+    let anioFin = parseInt(req.params.anioFin);
+    let mesFin = parseInt(req.params.mesFin) - 1;
+    let diaFin = parseInt(req.params.diaFin);
+
 
     let fecha = new Date(anio, mes, dia);
+    let fechaFin = new Date(anioFin, mesFin, diaFin);
 
-    modelBookings.aggregateBookingsPorFecha(fecha, fecha, (error, reserva) => {
+    modelBookings.aggregateBookingsPorFecha(fecha, fechaFin, (error, reserva) => {
         if (error) {
             console.error(error);
             res.send(error.message);

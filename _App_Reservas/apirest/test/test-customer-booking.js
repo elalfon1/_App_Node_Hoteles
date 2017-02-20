@@ -1,5 +1,3 @@
-/*
-
 var modelCustomers = require("../modelo/customers-modelo");
 var modelBookings = require("../modelo/bookings-modelo");
 var assert = require("assert");
@@ -26,28 +24,28 @@ describe("Pruebas CRUD Customers", function() {
             });
         });
 
-        it("Reserva Antonio Garcia 30-03-2017", function(done) {
+        it("Reserva Antonio Garcia", function(done) {
 
-            modelBookings.grabarBooking(idAntonioGarcia, 101, true, myDate, function(error, reserva) {
+            modelBookings.grabarBooking(idAntonioGarcia, 102, false, myDate, function(error, reserva) {
                 if (error) {
                     //assert.ok(false, error.message);
                     done(error);
                 } else {
-                    assert.ok(reserva.room_id == 101 && reserva.check_date == myDate);
+                    assert.ok(reserva.room_id == 102 && reserva.check_date == myDate);
                     done();
                 }
 
             });
         });
 
-        it("Reserva Antonio Garcia 30-03-2017", function(done) {
+        it("Reserva Antonio Garcia", function(done) {
 
-            modelBookings.grabarBooking(idAntonioGarcia, 101, true, myNextDate, function(error, reserva) {
+            modelBookings.grabarBooking(idAntonioGarcia, 102, false, myNextDate, function(error, reserva) {
                 if (error) {
                     //assert.ok(false, error.message);
                     done(error);
                 } else {
-                    assert.ok(reserva.room_id == 101 && reserva.check_date == myNextDate);
+                    assert.ok(reserva.room_id == 102 && reserva.check_date == myNextDate);
                     done();
                 }
 
@@ -58,5 +56,3 @@ describe("Pruebas CRUD Customers", function() {
 
     });
 });
-
-*/

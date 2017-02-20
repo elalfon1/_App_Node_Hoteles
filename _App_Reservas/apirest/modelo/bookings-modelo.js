@@ -54,7 +54,7 @@ function leerBookingsPorFecha(fechaInicio, fechaFin, callback) {
 function aggregateBookingsPorFecha(fechaInicio, fechaFin, callback) {
     Booking.aggregate([
         { $match: { "check_date": { $gte: fechaInicio, $lte: fechaFin } } },
-        { $group: { "_id": "$isDouble" } }
+        { $group: { "_id": "$room_id" } }
     ], (error, reservas) => {
         if (typeof callback != "undefined")
             callback(error, reservas);
