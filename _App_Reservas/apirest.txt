@@ -10,4 +10,5 @@ GET - Clientes
 
 GET - Reservas
 /api/reservas/fecha/:anio?/:mes?/:dia? (si no se indican fechas se muestran todas las reservas)
+/api/reservas/fecha/:anio/:mes/:dia/fechafin/:anioFin/:mesFin/:diaFin (todos los campos obligatorios)
 /api/reservas/:id? (si no se indica se muestran todas las reservas)

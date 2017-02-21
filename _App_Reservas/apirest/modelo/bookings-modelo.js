@@ -51,11 +51,19 @@ function leerBookingsPorFecha(fechaInicio, fechaFin, callback) {
     });
 };
 
-function aggregateBookingsPorFecha(fechaInicio, fechaFin, callback) {
-    Booking.aggregate([
-        { $match: { "check_date": { $gte: fechaInicio, $lte: fechaFin } } },
-        { $group: { "_id": "$room_id" } }
-    ], (error, reservas) => {
+// function aggregateBookingsPorFecha(fechaInicio, fechaFin, callback) {
+//     Booking.aggregate([
+//         { $match: { "check_date": { $gte: fechaInicio, $lte: fechaFin } } },
+//         { $group: { "_id": "$room_id" } }
+//     ], (error, reservas) => {
+//         if (typeof callback != "undefined")
+//             callback(error, reservas);
+//     });
+// };
+
+
+function leerBookingsEntreFechas(fechaInicio, fechaFin, callback) {
+    Booking.find().distinct('room_id', { "check_date": { $gte: fechaInicio, $lte: fechaFin } }, (error, reservas) => {
         if (typeof callback != "undefined")
             callback(error, reservas);
     });
@@ -72,5 +80,6 @@ module.exports.grabarBooking = grabarBooking;
 module.exports.borrarBooking = borrarBooking;
 module.exports.leerBookingPorId = leerBookingPorId;
 module.exports.leerBookingsPorFecha = leerBookingsPorFecha;
-module.exports.aggregateBookingsPorFecha = aggregateBookingsPorFecha;
+module.exports.leerBookingsEntreFechas = leerBookingsEntreFechas;
 module.exports.leerAllBookings = leerAllBookings;
+// module.exports.aggregateBookingsPorFecha = aggregateBookingsPorFecha;

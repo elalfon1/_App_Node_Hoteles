@@ -1,3 +1,4 @@
+/*
 var modelCustomers = require("../modelo/customers-modelo");
 var modelBookings = require("../modelo/bookings-modelo");
 var assert = require("assert");
@@ -56,3 +57,4 @@ describe("Pruebas CRUD Customers", function() {
 
     });
 });
+*/

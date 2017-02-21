@@ -2,7 +2,7 @@ var express = require("express");
 var modelBookings = require("../../modelo/bookings-modelo"); //En Node no hace falta el .js
 var router = express.Router();
 
-router.get("/aggregate/:anio/:mes/:dia/:anioFin/:mesFin/:diaFin", function(req, res, next) {
+router.get("/fecha/:anio/:mes/:dia/fechafin/:anioFin/:mesFin/:diaFin", function(req, res, next) {
     let anio = parseInt(req.params.anio);
     let mes = parseInt(req.params.mes) - 1;
     let dia = parseInt(req.params.dia);
@@ -15,7 +15,7 @@ router.get("/aggregate/:anio/:mes/:dia/:anioFin/:mesFin/:diaFin", function(req, 
     let fecha = new Date(anio, mes, dia);
     let fechaFin = new Date(anioFin, mesFin, diaFin);
 
-    modelBookings.aggregateBookingsPorFecha(fecha, fechaFin, (error, reserva) => {
+    modelBookings.leerBookingsEntreFechas(fecha, fechaFin, (error, reserva) => {
         if (error) {
             console.error(error);
             res.send(error.message);
@@ -54,7 +54,7 @@ router.get("/fecha/:anio?/:mes?/:dia?", function(req, res, next) {
             }
         });
 
-    } else if (anio && mes) {
+    } else if (anio && (mes || mes == 0)) {
 
         let fechaInicio = new Date(anio, mes, 1);
         let fechaFin = new Date(anio, mes + 1, 0);
